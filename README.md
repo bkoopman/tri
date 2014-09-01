@@ -7,6 +7,7 @@ About
 -----
 The SDL Tridion Reference Implementation is a reference implementation of SDL Tridion intended to help you create, design and publish an SDL Tridion-based Web site quickly.
 
+You can find more details and a download of the entire release on http://www.sdltridionworld.com/community/2011_extensions/reference_implementation.aspx
 
 Support
 ---------------
