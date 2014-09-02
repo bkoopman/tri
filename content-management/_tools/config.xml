@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<templateAssemblyUploadConfig>
+  <targetURL>http://your.cms.url</targetURL>
+  <uploadPDB>true</uploadPDB>
+</templateAssemblyUploadConfig>
