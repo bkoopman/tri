@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home | SDL Tridion Reference Implementation HTML Design</title>
+    <title>Carousel | SDL Tridion Reference Implementation HTML Design</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -101,7 +101,7 @@
             <option value="uk" data-href="//uk.wikipedia.com/">Ukrainian</option>
           </select>
           <ul class="nav navbar-nav main-nav">
-            <li class="active">
+            <li>
               <a href="/index.html">Home</a>
             </li>
             <li>
@@ -110,7 +110,7 @@
             <li>
               <a href="/content-types/index.html">Content Types</a>
             </li>
-            <li>
+            <li class="active">
               <a href="/lists/index.html">Lists</a>
             </li>
             <li>
@@ -127,57 +127,159 @@
   <main class="page-row page-row-expanded" role="main">
   	<div class="container-fluid page-border">
     	
+
 <div class="row">
 	<div class="col-sm-12">
-		<div class="jumbotron">
-			<h1>Whitelabel HTML Design</h1>
-			<p>This site demonstrates the use of the HTML Design that is provided as part of the SDL Tridion Reference Implementation.</p>
-		</div>
+		<ol class="breadcrumb">
+	<li><a href="/"><i class="fa fa-home"> <span class='sr-only'>Home</span></i></a></li>
+	<li><a href="/">Lists</a></li>
+	<li class="active">Carousel</li>
+</ol>
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-6 col-md-4">
-		<div class="teaser teaser-desc-inner">
-			<img class="teaser-img" data-aspect="1.62" src="/system/assets/images/teaser/blueprint.jpg" alt="Page Layouts">
-			<h2 class="teaser-heading overlay overlay-top ribbon"><a href="layouts/index.html">Page Layouts</a></h2>
-    		<p class="teaser-description overlay overlay-top ribbon">See the different types of page layout you can work with</p>
-		</div>
+	<div class="col-sm-12 col-md-3">
+		<nav>
+	<ul class='nav nav-sidebar'>
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			 
+				<li>
+					<a href="accordion.html">Accordion</a> 
+				</li>
+			
+		 
+			 
+				<li class="active">
+					<a href="carousel.html">Carousel</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="gallery.html">Image Gallery</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="index.html">Index</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="paged.html">Paged List</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="tabs.html">Tabs</a> 
+				</li>
+			
+		
+	</ul>
+</nav>
 	</div>
-    <div class="col-sm-6 col-md-4">
-        <div class="teaser teaser-desc-inner">
-	    	<img class="teaser-img" data-aspect="1.62" src="/system/assets/images/teaser/map.jpg" alt="Content Types">
-	    	<h2 class="teaser-heading overlay overlay-top ribbon"><a href="content-types/index.html">Content Types</a></h2>
-    		<p class="teaser-description overlay overlay-bottom ribbon">Articles, Maps, Video, Downloads, Teasers and more...</p>
+	<div class="col-sm-12 col-md-9">
+		<div id="carousel-large" class="carousel slide" data-ride="carousel" data-interval="5000">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-large" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-large" data-slide-to="1"></li>
+				<li data-target="#carousel-large" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="/system/assets/images/wide/blueprint.jpg" alt="" data-aspect="3.3">
+					<div class="overlay overlay-tl ribbon">
+						<h2>Header Carousel</h2>
+						<small>(overlay overlay-tl ribbon)</small></h4>
+					</div>
+				</div>
+				<div class="item">
+					<img src="/system/assets/images/wide/map.jpg" alt="" data-aspect="3.3">
+					<div class="overlay overlay-tr glow">
+						<h2>All controls showing</h2>
+						<small>(overlay overlay-tr glow)</small></h4>
+					</div>
+				</div>
+				<div class="item">
+					<img src="/system/assets/images/wide/balloons.jpg" alt="" data-aspect="3.3">
+					<div class="carousel-caption">
+						<p><a href='http://getbootstrap.com/javascript/#carousel' class='btn btn-primary'>Find out more</a></p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-large" data-slide="prev">
+				<i class='fa fa-chevron-left carousel-icon-left'></i>
+			</a>
+			<a class="right carousel-control" href="#carousel-large" data-slide="next">
+				<i class='fa fa-chevron-right carousel-icon-right'></i>
+			</a>
 		</div>
-    </div>
-	<div class="col-sm-6 col-md-4">
-        <div class="teaser teaser-desc-inner">
-        	<img class="teaser-img" data-aspect="1.62" src="/system/assets/images/teaser/bulls-eye.jpg" alt="Lists">
-        	<h2 class="teaser-heading overlay overlay-top ribbon"><a href="lists/index.html">Lists</a></h2>
-            <p class="teaser-description overlay overlay-bottom ribbon">Lists of content shown in a variety of way from carousels to accordions</p>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
 		</div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="teaser teaser-desc-inner">
-        	<img class="teaser-img" data-aspect="1.62" src="/system/assets/images/teaser/balloons.jpg" alt="Features">
-        	<h2 class="teaser-heading teaser-heading overlay overlay-top ribbon"><a href="features/index.html" title="">Features</a></h2>
-            <p class="teaser-description overlay overlay-bottom ribbon">Additional features to enrich the site like popups and notifications</p>
-		</div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="teaser teaser-desc-inner">
-	    	<img class="teaser-img" data-aspect="1.62" src="/system/assets/images/teaser/bootstrap.png" alt="3rd Party Products">
-	    	<h2 class="teaser-heading overlay overlay-top ribbon"><a href="3rd-party-products.html" title="">3<sup>rd</sup> Party Products</a></h2>
-    		<p class="teaser-description overlay overlay-bottom ribbon">More information on the 3<sup>rd</sup> party libraries used in the HTML Design</p>
-		</div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="teaser teaser-desc-inner">
-	    	<img class="teaser-img" data-aspect="1.62" src="/system/assets/images/teaser/bridge.jpg" alt="Build it">
-	    	<h2 class="teaser-heading overlay overlay-top ribbon"><a href="build.html">Build it</a></h2>
-    		<p class="teaser-description overlay overlay-bottom ribbon">How to manually build (compile/merge/minify) the HTML Design assets yourself</p>
-		</div>
-    </div>
+
+		<hr/>
+
+	</div>
 </div>
 	</div>
   </main>

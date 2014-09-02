@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Accordion | SDL Tridion Reference Implementation HTML Design</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+
+    <link rel="stylesheet" href="/system/assets/css/main.css">
+
+    <script src="/system/assets/scripts/header.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/system/assets/scripts/ie.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="info-bar" class="page-row">
+      <!--[if lt IE 8]>
+        <div id="incompability" class="container-fluid page-border">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="h4">Old browser</div>
+      <p>We are sorry, but your browser is too old and some parts of this site might looks or works incorrectly. Update your browser to new one.</p>
+    </div>
+    <div class="col-sm-3">
+      <ul class="nav nav-cookie">
+        <li>
+          <a id="incompability-hide" href="#"><i class="fa fa-check-circle"></i> Continue</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-cog"></i> Update browser</a>
+        </li>
+        <li>
+         <a href="#"><i class="fa fa-question-circle"></i> Help me</a>
+        </li>
+      </ul>
+    </div>
+  </div>  
+</div>
+      <![endif]-->
+      <div id="cookie" class="container-fluid page-border">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="h4">Cookies</div>
+      <p>We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on this website. However, if you would like to, you can change your cookie settings at any time.</p>
+    </div>
+    <div class="col-sm-3">
+      <ul class="nav nav-cookie">
+        <li>
+          <a id="cookie-hide" href="#"><i class="fa fa-check-circle"></i> Continue</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-cog"></i> Change settings</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-question-circle"></i> Find out more</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+    </div>
+  
+
+<header id="page-header" class="navbar navbar-default">
+  <div class="container-fluid page-border">
+    <div class="row">
+      <div class="col-xs-12" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-logo" href="/" title="SDL Tridion Reference Implementation HTML Design">
+            <img src="/system/assets/images/logo.png" alt="SDL Tridion Reference Implementation HTML Design Logo">
+          </a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav utility-nav">
+            <li>
+              <a href="/3rd-party-products.html">3<sup>rd</sup> Party Products</a>
+            </li>
+            <li>
+              <a href="/build.html">Build it!</a>
+            </li>
+          </ul>
+          <select class="selectpicker" data-width="auto">
+            <option value="en" data-href="//en.wikipedia.com/">English</option>
+            <option value="nl" data-href="//nl.wikipedia.com/">Dutch</option>
+            <option value="fr" data-href="//fr.wikipedia.com/">French</option>
+            <option value="de" data-href="//de.wikipedia.com/">German</option>
+            <option value="uk" data-href="//uk.wikipedia.com/">Ukrainian</option>
+          </select>
+          <ul class="nav navbar-nav main-nav">
+            <li>
+              <a href="/index.html">Home</a>
+            </li>
+            <li>
+              <a href="/layouts/index.html">Layouts</a>
+            </li>
+            <li>
+              <a href="/content-types/index.html">Content Types</a>
+            </li>
+            <li class="active">
+              <a href="/lists/index.html">Lists</a>
+            </li>
+            <li>
+              <a href="/features/index.html">Features</a>
+            </li>
+			
+          </ul>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <main class="page-row page-row-expanded" role="main">
+  	<div class="container-fluid page-border">
+    	
+
+<div class="row">
+	<div class="col-sm-12">
+		<ol class="breadcrumb">
+	<li><a href="/"><i class="fa fa-home"> <span class='sr-only'>Home</span></i></a></li>
+	<li><a href="/">Lists</a></li>
+	<li class="active">Accordion</li>
+</ol>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12 col-md-3">
+		<nav>
+	<ul class='nav nav-sidebar'>
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			
+		 
+			 
+				<li class="active">
+					<a href="accordion.html">Accordion</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="carousel.html">Carousel</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="gallery.html">Image Gallery</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="index.html">Index</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="paged.html">Paged List</a> 
+				</li>
+			
+		 
+			 
+				<li>
+					<a href="tabs.html">Tabs</a> 
+				</li>
+			
+		
+	</ul>
+</nav>
+	</div>
+	<div class="col-sm-12 col-md-9">
+
+		<article class='rich-text'>
+				<h1>Accordions</h1>
+
+				<p>
+					The standard way of implementing accordions with Boostrap makes them very hard to use on mobile devices. 
+					E.g. opening the second item will cause the first item to close, and the content to shift up by the height of the forst item, disorientating the user.
+				</p>
+
+				<div class="panel-group" id="accordion">
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapseOne" data-parent="#accordion">
+							<h4 class="panel-title">Collapsible Group Item #1</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapseTwo" data-parent="#accordion">
+							<h4 class="panel-title">Collapsible Group Item #2</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapseThree" data-parent="#accordion">
+							<h4 class="panel-title">Collapsible Group Item #3</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<p>Removing the 'data-parent' attribute means that opening one item does not close another, which works much better on mobile devices</p>
+
+				<div class="panel-group">
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapse2One">
+							<h4 class="panel-title">Collapsible Group Item #1</h4>
+						</div>
+						<div id="collapse2One" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapse2Two">
+							<h4 class="panel-title">Collapsible Group Item #2</h4>
+						</div>
+						<div id="collapse2Two" class="panel-collapse collapse">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapse2Three">
+							<h4 class="panel-title">Collapsible Group Item #3</h4>
+						</div>
+						<div id="collapse2Three" class="panel-collapse collapse">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<p>To get the best experience on both mobile and other devices I have added some javascript that removes the 'data-parent' attribute only if a mobile device is detected. To enable this add the class 'responsive-accordion' to the accordion parent.</p>
+
+				<div class="panel-group responsive-accordion" id="accordion3">
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapse3One" data-parent="#accordion3">
+							<h4 class="panel-title">Collapsible Group Item #1</h4>
+						</div>
+						<div id="collapse3One" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapse3Two" data-parent="#accordion3">
+							<h4 class="panel-title">Collapsible Group Item #2</h4>
+						</div>
+						<div id="collapse3Two" class="panel-collapse collapse">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-target="#collapse3Three" data-parent="#accordion3">
+							<h4 class="panel-title">Collapsible Group Item #3</h4>
+						</div>
+						<div id="collapse3Three" class="panel-collapse collapse">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+
+				</div>
+  
+
+			</div>
+
+		</article>
+
+	</div>
+</div>
+	</div>
+  </main>
+  	<footer id="page-footer" class="page-row">
+  		<div class="container-fluid page-border">
+  			<div class="row">
+  				<div class="col-sm-4 col-md-3">
+  					<div class="h4">Layouts</div>
+  					<ul class="list-unstyled">
+  						<li>
+  							<a href="/layouts/section.html">Section Page</a>
+  						</li>
+  						<li>
+  							<a href="/layouts/content-no-nav.html">Content Page</a>
+  						</li>
+  						<li>
+  							<a href="/layouts/content.html">Content Page (No Nav)</a>
+  						</li>
+  					</ul>
+  				</div>
+  				<div class='col-sm-4 col-md-3'>
+  					<div class='h4'>Content Types</div>
+  					<ul class="list-unstyled">
+  						<li>
+  							<a href="/content-types/teasers.html">Teasers</a>
+  						</li>
+  						<li>
+  							<a href="/content-types/article.html">Articles</a>
+  						</li>
+  						<li>
+  							<a href="/content-types/location.html">Location</a>
+  						</li>
+  					</ul>
+  				</div>
+  				<div class='col-sm-4 col-md-3'>
+  					<div class='h4'>Lists</div>
+  					<ul class="list-unstyled">
+  						<li>
+  							<a href="/lists/carousel.html">Carousel</a>
+  						</li>
+  						<li>
+  							<a href="/lists/paged.html">Paged List</a>
+  						</li>
+  						<li>
+  							<a href="/lists/accordion.html">Accordion</a>
+  						</li>
+  						<li>
+  							<a href="/lists/tabs.html">Tabs</a>
+  						</li>
+						  <li>
+							<a href="/lists/gallery.html">Image Gallery</a>
+						  </li>
+  					</ul>
+  				</div>
+  				<div class='col-sm-12 col-md-3'>
+  					<div class='icon-list'>
+  						<a href='#' class="fa-stack fa-lg">
+  							<i class="fa fa-circle fa-stack-2x"></i>
+  							<i class="fa fa-twitter fa-stack-1x"></i>
+  						</a>
+  						<a href='#' class="fa-stack fa-lg">
+  							<i class="fa fa-circle fa-stack-2x"></i>
+  							<i class="fa fa-facebook fa-stack-1x"></i>
+  						</a>
+  						<a href='#' class="fa-stack fa-lg">
+  							<i class="fa fa-circle fa-stack-2x"></i>
+  							<i class="fa fa-linkedin fa-stack-1x"></i>
+  						</a>
+  					</div>
+  				</div>
+  			</div>
+  			<hr/>
+  			<ul class='list-inline text-center'>
+  				<li>
+  					<small>&copy; Copyright 2014</small>
+  				</li>
+  				<li>
+  					<small><a href="/beta/index.html">Beta Features</a></small>
+  				</li>
+  			</ul>	
+  		</div>
+  	</footer>
+    <script src="/system/assets/scripts/main.js"></script>
+
+    <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+  </body>
+</html>
