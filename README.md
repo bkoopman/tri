@@ -20,7 +20,13 @@ If you encounter problems, reach out to the community: http://tridion.stackexcha
 Sources
 -------
 
-The official v1.0 GA release (downloadable on http://www.sdltridionworld.com/community/2011_extensions/reference_implementation.aspx) contains only the Site project in the web-application Visual Studio solution, since only that part of the source is considered public API (as in, you are expected to change that). This repository contains the full source of all the Sdl.Web.* DLLs to give you insight in how the solution is built and what is there available for you to extend. You are free to use these sources under the terms and conditions of the license mentioned below, however we suggest you only change the code of the Site project and make use of the compiled Sdl.Web.Common.dll, Sdl.Web.DD4T.dll, Sdl.Web.Mvc.dll and Sdl.Web.Tridion.dll from SDL Tridion World. 
+The official v1.0 GA release (downloadable on http://www.sdltridionworld.com/community/2011_extensions/reference_implementation.aspx) contains only the **Site** project in the web-application Visual Studio solution, since only that part of the source is considered public API (as in, you are expected to change that). This repository contains the full source of all the `Sdl.Web.*` DLLs to give you insight in how the solution is built and what is there available for you to extend. You are free to use these sources under the terms and conditions of the license mentioned below, however we suggest you only change the code of the **Site** project and make use of the compiled `Sdl.Web.Common.dll`, `Sdl.Web.DD4T.dll`, `Sdl.Web.Mvc.dll` and `Sdl.Web.Tridion.dll` from SDL Tridion World. 
+
+
+Hotfix
+------
+
+We released a hotfix (stri-1.0.1) on top of the v1.0 GA release, the sources here are updated with the changes in this hotfix, and so is the download package on SDL Tridion World. The hotfix is also separately available to be installed on an existing V1.0 GA Reference Implementation installation. Details about this hotfix and its installation instructions are available inside the zipfile.
 
 
 License
