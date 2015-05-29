@@ -72,7 +72,7 @@ namespace Sdl.Web.DD4T.Mapping
                 mapData.TargetEntitiesByPrefix = GetEntityDataFromType(type);
                 mapData.Content = component.Fields;
                 mapData.Meta = component.MetadataFields;
-                mapData.TargetType = type;
+                mapData.TargetType = ProcessType(type,component);
                 mapData.SourceEntity = component;
                 var model = CreateModelFromMapData(mapData);
                 if (model is IEntity)
@@ -91,6 +91,31 @@ namespace Sdl.Web.DD4T.Mapping
 
             }
             return null;
+        }
+
+        protected virtual Type ProcessType(Type type, IComponent source)
+        {
+            //Extension point for specific type processing
+            //For example, here we can ensure a model with a 
+            //Generic MediaItem link is populated with a specific
+            //subtype (Image, YoutubeVideo, Download) model 
+            if (source.Multimedia!=null && type==typeof(MediaItem))
+            {
+                string schemaTitle = source.Schema.Title;
+                if (type.IsAssignableFrom(typeof(Image)) && schemaTitle.ToLower().Contains("image"))
+                {
+                    return typeof(Image);
+                }
+                if (type.IsAssignableFrom(typeof(Download)) && schemaTitle.ToLower().Contains("download"))
+                {
+                    return typeof(Download);
+                }
+                if (type.IsAssignableFrom(typeof(YouTubeVideo)) && schemaTitle.ToLower().Contains("youtube"))
+                {
+                    return typeof(YouTubeVideo);
+                }
+            }
+            return type;
         }
 
         protected virtual object CreateModelFromMapData(MappingData mapData)
@@ -122,7 +147,7 @@ namespace Sdl.Web.DD4T.Mapping
                             {
                                 if (propertyType == typeof(MediaItem) && mapData.SourceEntity.Multimedia != null)
                                 {
-                                     pi.SetValue(model, GetMultiMediaLinks(new List<IComponent> { mapData.SourceEntity }, propertyType, multival));
+                                     pi.SetValue(model, GetMultiComponentLinks(new List<IComponent> { mapData.SourceEntity }, propertyType, multival));
                                      processed = true;
                                 }
                                 else if (propertyType == typeof(Link) || propertyType == typeof(String))
@@ -263,7 +288,7 @@ namespace Sdl.Web.DD4T.Mapping
                 case (FieldType.Number):
                     return GetNumbers(field, propertyType, multival);
                 case (FieldType.MultiMediaLink):
-                    return GetMultiMediaLinks(field, propertyType, multival);
+                    return GetMultiComponentLinks(field, propertyType, multival);
                 case (FieldType.ComponentLink):
                     return GetMultiComponentLinks(field, propertyType, multival);
                 case (FieldType.Embedded):
@@ -350,50 +375,6 @@ namespace Sdl.Web.DD4T.Mapping
                     return field.NumericValues.Select(d=>(int)Math.Round(d));
                 }
                 return (int)Math.Round(field.NumericValues[0]);
-            }
-            return null;
-        }
-
-        private static object GetMultiMediaLinks(IField field, Type modelType, bool multival)
-        {
-            return GetMultiMediaLinks(field.LinkedComponentValues, modelType, multival);
-        }
-
-        private static object GetMultiMediaLinks(IEnumerable<IComponent> items, Type modelType, bool multival)
-        {
-            var components = items as IList<IComponent> ?? items.ToList();
-            if (components.Any())
-            {
-                // TODO find better way to determine image or video
-                string schemaTitle = components.First().Schema.Title;
-                if (modelType.IsAssignableFrom(typeof(YouTubeVideo)) && schemaTitle.ToLower().Contains("youtube"))
-                {
-                    if (multival)
-                    {
-                        return GetYouTubeVideos(components);
-                    }
-
-                    return GetYouTubeVideos(components)[0];
-                }
-                if (modelType.IsAssignableFrom(typeof(Download)) && schemaTitle.ToLower().Contains("download"))
-                {
-                    if (multival)
-                    {
-                        return GetDownloads(components);
-                    }
-
-                    return GetDownloads(components)[0];
-                }
-                if (modelType.IsAssignableFrom(typeof(Image)))
-                {
-                    if (multival)
-                    {
-                        return GetImages(components);
-                    }
-
-                    return GetImages(components)[0];
-                }
-                // TODO handle other types
             }
             return null;
         }
@@ -501,7 +482,22 @@ namespace Sdl.Web.DD4T.Mapping
             //TODO is reflection the only way to do this?
             MethodInfo method = GetType().GetMethod("GetCompLink" + (multival ? "s" : String.Empty), BindingFlags.NonPublic | BindingFlags.Instance);
             method = method.MakeGenericMethod(new[] { linkedItemType });
-            return method.Invoke(this, new object[] { items, linkedItemType });
+            return method.Invoke(this, new object[] { items });
+        }
+
+        private List<T> GetCompLinks<T>(IEnumerable<IComponent> components)
+        {
+            List<T> list = new List<T>();
+            foreach (var comp in components)
+            {
+                list.Add((T)Create(comp, typeof(T)));
+            }
+            return list;
+        }
+
+        private T GetCompLink<T>(IEnumerable<IComponent> components)
+        {
+            return GetCompLinks<T>(components)[0];
         }
 
         private object GetMultiEmbedded(IField field, Type propertyType, bool multival, MappingData mapData)
@@ -555,22 +551,6 @@ namespace Sdl.Web.DD4T.Mapping
                 return field.Value;
             }
             return null;
-        }
-
-        private static List<Image> GetImages(IEnumerable<IComponent> components)
-        {
-            return components.Select(c => new Image { Url = c.Multimedia.Url, FileName = c.Multimedia.FileName, FileSize = c.Multimedia.Size, MimeType = c.Multimedia.MimeType}).ToList();
-        }
-
-        private static List<YouTubeVideo> GetYouTubeVideos(IEnumerable<IComponent> components)
-        {
-            return components.Select(c => new YouTubeVideo { Url = c.Multimedia.Url, FileSize = c.Multimedia.Size, MimeType = c.Multimedia.MimeType, YouTubeId = c.MetadataFields["youTubeId"].Value }).ToList();
-        }
-
-        private static List<Download> GetDownloads(IEnumerable<IComponent> components)
-        {
-            //todo this contains hardcoded metadata while we would expect this to semantiaclly ma
-            return components.Select(c => new Download { Url = c.Multimedia.Url, FileName = c.Multimedia.FileName, FileSize = c.Multimedia.Size, MimeType = c.Multimedia.MimeType, Description = (c.MetadataFields.ContainsKey("description") ? c.MetadataFields["description"].Value : null) }).ToList();
         }
 
         protected Dictionary<string, string> GetAllFieldsAsDictionary(IComponent component)
