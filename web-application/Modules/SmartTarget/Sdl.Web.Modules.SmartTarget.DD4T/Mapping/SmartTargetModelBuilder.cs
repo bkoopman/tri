@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using DD4T.ContentModel;
 using DD4T.ContentModel.Factories;
@@ -103,15 +104,12 @@ namespace Sdl.Web.Modules.SmartTarget.DD4T.Mapping
 
         private void RetrievePromotionEntities(SmartTargetPromotion promotion)
         {
-            foreach (var promotionItem in promotion.Items)
+            foreach (var promotionItem in promotion.Items.Where(p => p.IsVisible))
             {
-                if (promotionItem.IsVisible)
+                IComponentPresentation componentPresentation;
+                if (_componentPresentationFactory.TryGetComponentPresentation(promotionItem.ComponentUri, promotionItem.TemplateUri, out componentPresentation))
                 {
-                    IComponentPresentation componentPresentation;
-                    if (_componentPresentationFactory.TryGetComponentPresentation(promotionItem.ComponentUri, promotionItem.TemplateUri, out componentPresentation))
-                    {
-                        promotionItem.Entity = componentPresentation;
-                    }
+                    promotionItem.Entity = componentPresentation;
                 }
             }
         }
