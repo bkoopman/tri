@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.Web.Modules.Search", "Search\Sdl.Web.Modules.Search\Sdl.Web.Modules.Search.csproj", "{8FEFFF4C-0AE2-452F-89B1-36F7D2944032}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.Web.Tridion", "..\Sdl.Web.Tridion\Sdl.Web.Tridion.csproj", "{AE4651DF-A42F-4863-A0E1-870EACF3D072}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.Web.DD4T", "..\Sdl.Web.DD4T\Sdl.Web.DD4T.csproj", "{360AEC0A-3367-486A-885F-7931F32234C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.Web.Modules.SmartTarget", "SmartTarget\Sdl.Web.Modules.SmartTarget\Sdl.Web.Modules.SmartTarget.csproj", "{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.Web.Modules.SmartTarget.DD4T", "SmartTarget\Sdl.Web.Modules.SmartTarget.DD4T\Sdl.Web.Modules.SmartTarget.DD4T.csproj", "{DD3A7294-291F-420D-81B0-0058AB704B8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,22 @@ Global
 		{360AEC0A-3367-486A-885F-7931F32234C1}.Tridion71Debug|Any CPU.Build.0 = Debug|Any CPU
 		{360AEC0A-3367-486A-885F-7931F32234C1}.Tridion71Release|Any CPU.ActiveCfg = Release|Any CPU
 		{360AEC0A-3367-486A-885F-7931F32234C1}.Tridion71Release|Any CPU.Build.0 = Release|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Tridion71Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Tridion71Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Tridion71Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05ECDB04-EB87-4EC9-B13B-C3D5C100494C}.Tridion71Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Tridion71Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Tridion71Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Tridion71Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3A7294-291F-420D-81B0-0058AB704B8D}.Tridion71Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,37 @@
+﻿@model SmartTargetRegion
+@using System.Linq
+@using Sdl.Web.Modules.SmartTarget.Models;
+<div id="inset-2" @Markup.Region(Model)>
+    <span>
+        @Html.Raw(Model.XpmMarkup)
+        @if (Model.HasSmartTargetContent)
+        {
+            foreach (var promotion in Model.Items.Cast<SmartTargetPromotion>())
+            {
+                if (promotion.IsVisible)
+                {
+                    <span>
+                        @Html.Raw(promotion.XpmMarkup)
+                        <h2>@promotion.Title</h2>
+                        <h3>@promotion.Slogan</h3>
+                        @foreach (var item in promotion.Items)
+                        {
+                            if (item.IsVisible)
+                            {
+                                @ViewBag.Renderer.RenderEntity(item.Entity, Html)
+                            }
+                        }
+                    </span>
+                }
+            }
+        }
+        else
+        {
+            //Render fallback content
+            foreach (var item in Model.Items)
+            {
+                @ViewBag.Renderer.RenderEntity(item, Html)
+            }
+        }
+    </span>
+</div>

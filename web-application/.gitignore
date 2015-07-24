@@ -3,6 +3,7 @@ obj
 bin
 *.user
 *.suo
-Site/system/v*.*/
-packages/
+mod
+packages
 Site/ClaimStore.aspx
+Site/system/v*.*/
