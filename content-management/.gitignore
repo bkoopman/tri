@@ -1,4 +1,6 @@
-/Sdl.Web.Templating/bin
-/Sdl.Web.Templating/obj
-/Sdl.Web.Templating/*.user
-/Sdl.Web.Templating/*.suo
+bin
+obj
+*.user
+*.suo
+_references/2013-sp1/*.dll
+_references/ecl/*.dll
