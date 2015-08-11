@@ -9,6 +9,8 @@ The SDL Tridion Reference Implementation is a reference implementation of SDL Tr
 
 You can find more details and a download of the entire release on http://www.sdltridionworld.com/community/2011_extensions/reference_implementation.aspx
 
+This repository will be frozen with the release of the SDL Digital Experience Accelerator version 1.1 (a rename and an update). The latest version can be downloaded on the SDL Community website https://community.sdl.com/developers/tridion_developer/m/mediagallery/852, and the sources can be found on SDL's GitHub account https://github.com/sdl/dxa-web-application-dotnet
+
 
 Support
 ---------------
