@@ -69,7 +69,7 @@ namespace Sdl.Web.Tridion.Templates
                 {
                     Component comp = (Component)Engine.GetObject(uri);
                     // resolve youtube video
-                    if (comp != null)
+                    if (comp != null && comp.Metadata != null)
                     {
                         ItemFields fields = new ItemFields(comp.Metadata, comp.MetadataSchema);
                         ProcessFields(fields, link);
