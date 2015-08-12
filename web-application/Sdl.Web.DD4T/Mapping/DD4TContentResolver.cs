@@ -62,9 +62,11 @@ namespace Sdl.Web.DD4T.Mapping
                 if (url!=null && url.EndsWith(DefaultExtension))
                 {
                     url = url.Substring(0, url.Length - DefaultExtension.Length);
-                    if (url.EndsWith("/" + DefaultExtensionLessPageName))
+                    // Also strip the forward slash
+                    var defaultPageNamePart = "/" + DefaultExtensionLessPageName;
+                    if (url.EndsWith(defaultPageNamePart))
                     {
-                        url = url.Substring(0, url.Length - DefaultExtensionLessPageName.Length);
+                        url = url.Substring(0, url.Length - defaultPageNamePart.Length);
                     }
                 }
             }
