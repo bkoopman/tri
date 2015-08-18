@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD3A7294-291F-420D-81B0-0058AB704B8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sdl.Web.Modules.SmartTarget.DD4T</RootNamespace>
+    <AssemblyName>Sdl.Web.Modules.SmartTarget.DD4T</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DD4T.ContentModel">
+      <HintPath>..\..\..\packages\DD4TFramework.1.31.0\lib\DD4T.ContentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DD4T.ContentModel.Contracts">
+      <HintPath>..\..\..\packages\DD4TFramework.1.31.0\lib\DD4T.ContentModel.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tridion.ContentDelivery, Version=7.1.0.165, Culture=neutral, PublicKeyToken=ddfc895746e5ee6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_references\2013-sp1\Tridion.ContentDelivery.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factories\ComponentPresentationFactory.cs" />
+    <Compile Include="Factories\IComponentPresentationFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mapping\SmartTargetModelBuilder.cs" />
+    <Compile Include="Html\SmartTargetRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Sdl.Web.Common\Sdl.Web.Common.csproj">
+      <Project>{21c08f9a-24c2-481a-95c3-a255be9771a7}</Project>
+      <Name>Sdl.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Sdl.Web.DD4T\Sdl.Web.DD4T.csproj">
+      <Project>{360aec0a-3367-486a-885f-7931f32234c1}</Project>
+      <Name>Sdl.Web.DD4T</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Sdl.Web.Mvc\Sdl.Web.Mvc.csproj">
+      <Project>{923b2009-9a0b-4425-88a5-bf7af25c8f8b}</Project>
+      <Name>Sdl.Web.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sdl.Web.Modules.SmartTarget\Sdl.Web.Modules.SmartTarget.csproj">
+      <Project>{05ecdb04-eb87-4ec9-b13b-c3d5c100494c}</Project>
+      <Name>Sdl.Web.Modules.SmartTarget</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rmdir "$(SolutionDir)..\mod\SmartTarget.DD4T\web\Site" /q /s
+xcopy "$(TargetPath)" "$(SolutionDir)..\mod\SmartTarget.DD4T\web\Site\bin\" /Y /s
+xcopy "$(SolutionDir)..\mod\SmartTarget.DD4T\web\Site\*" "$(SolutionDir)..\Site\" /Y /s</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
